@@ -35,6 +35,10 @@ jobs:
           keys:
             - "npm-packages"
       - run: npm audit
+      - run:
+          name: on error
+          command: echo "Npm audit has failed"
+          when: on_fail
 
 workflows:
   my_workflow:
